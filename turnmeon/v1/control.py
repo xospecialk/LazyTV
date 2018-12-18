@@ -17,7 +17,7 @@ class Control(Resource):
         action = args.get('action')
         ssh = paramiko.SSHClient()
         ssh.load_system_host_keys()
-        ssh.connect("192.168.0.10", username="root", password="openelec")
+        ssh.connect("0.0.0.0", username="root", password="openelec")
         if action == "on":
             ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command(self.turn_on)
         else:
